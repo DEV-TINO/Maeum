@@ -34,14 +34,14 @@ This template should help get you started developing with Vue 3 in Vite.
 
 #### Commit Type
 
-- feat: a commit with a new feature
-- fix: a commit with a bug fix
-- refactor: a commit rewriting / restructure codebase, probably for clean code or performance improvement
-- style: a commit that changes formatting of codebase, not changing its functions (white-space, missing semi-colons, etc)
-- test: a commit with test codes
-- docs: a commit with documentation
-- build: a commit with infrastructure, deployment, building, etc
-- chore: a miscellaneous commit (none of above)
+- `feat`: a commit with a new feature
+- `fix`: a commit with a bug fix
+- `refactor`: a commit rewriting / restructure codebase, probably for clean code or performance improvement
+- `style`: a commit that changes formatting of codebase, not changing its functions (white-space, missing semi-colons, etc)
+- `test`: a commit with test codes
+- `docs`: a commit with documentation
+- `build`: a commit with infrastructure, deployment, building, etc
+- `chore`: a miscellaneous commit (none of above)
 
 ### Github Pull Reqeust Convention
 
@@ -73,15 +73,9 @@ This template should help get you started developing with Vue 3 in Vite.
 - [ ] check 2
 ```
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
 ## Project Setup
+
+> Using node lts version is recommended
 
 ```sh
 npm install
