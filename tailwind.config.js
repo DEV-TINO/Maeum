@@ -9,6 +9,9 @@ export default {
         box_color: "#F4F4F4",
         select_box_color: "#FFE1E1",
       },
+      backgroundImage: {
+        main_background: "url(/image/main_background.png)",
+      },
     },
   },
   plugins: [],
