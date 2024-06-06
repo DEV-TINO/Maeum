@@ -9,12 +9,21 @@
     </div>
     <button
       class="my-11 h-14 w-11/12 bg-white rounded-2xl text-button_color font-bold"
+      @click="goNextPage"
     >
       시작하기
     </button>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  methods: {
+    goNextPage() {
+      this.$router.push("/script/name");
+    },
+  },
+};
+</script>
 
 <style></style>
