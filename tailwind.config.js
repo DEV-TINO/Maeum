@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FF6900",
-        button_color: "#585858",
-        box_color: "#F4F4F4",
-        select_box_color: "#FFE1E1",
+        "primary-color": "#FF6900",
+        "button-color": "#585858",
+        "box-color": "#F4F4F4",
+        "select-box-color": "#FFE1E1",
       },
       backgroundImage: {
-        main_background: "url(/image/main_background.png)",
+        "main-background": "url(/image/main-background.png)",
       },
     },
   },
