@@ -7,14 +7,8 @@ const router = createRouter({
       component: () => import("../components/MainPage.vue"),
     },
     {
-      path: "/script",
-      component: () => import("../components/BasicLayout.vue"),
-      children: [
-        {
-          path: "name",
-          component: () => import("../components/InputNamePage.vue"),
-        },
-      ],
+      path: "/step/1",
+      component: () => import("../components/Step1Page.vue"),
     },
   ],
 });

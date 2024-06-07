@@ -22,7 +22,7 @@
 export default {
   methods: {
     handleClickStartButton() {
-      this.$router.push("/script/name");
+      this.$router.push("/step/1");
     },
   },
 };
