@@ -1,11 +1,6 @@
-<script setup>
-
-</script>
+<script></script>
 
 <template>
-  <div>Hello, word!</div>
+  <router-view></router-view>
 </template>
-
-<style scoped>
-
-</style>
+<style></style>
