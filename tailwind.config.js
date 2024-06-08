@@ -8,9 +8,11 @@ export default {
         "button-color": "#585858",
         "box-color": "#F4F4F4",
         "select-box-color": "#FFE1E1",
+        "text-color": "#383838",
       },
       backgroundImage: {
-        "main-background": "url(/image/main-background.png)",
+        "main-background": "url(/images/main-background.png)",
+        "result-bacground": "url(/images/result-background.png)",
       },
     },
   },
