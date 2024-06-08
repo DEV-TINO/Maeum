@@ -1,7 +1,7 @@
 <template>
   <div class="mt-8 px-2 flex flex-row w-full">
     <img
-      src="/public/image/header-previous.png"
+      src="/public/images/header-previous.png"
       @click="handleClickMoveToStep1"
     />
     <div class="flex-1"></div>
@@ -9,8 +9,6 @@
 </template>
 
 <script>
-import router from "@/router/router";
-
 export default {
   methods: {
     handleClickMoveToStep1() {
