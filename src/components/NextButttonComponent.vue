@@ -1,3 +1,14 @@
+<script setup>
+const props = defineProps({
+  handleClickNextButton: {
+    type: Function,
+    required: true,
+  },
+  text: {
+    type: String,
+  },
+});
+</script>
 <template>
   <button
     @click="handleClickNextButton"
@@ -6,19 +17,5 @@
     {{ text == null ? "다음" : text }}
   </button>
 </template>
-
-<script>
-export default {
-  props: {
-    handleClickNextButton: {
-      type: Function,
-      required: true,
-    },
-    text: {
-      type: String,
-    },
-  },
-};
-</script>
 
 <style></style>

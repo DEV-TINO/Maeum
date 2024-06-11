@@ -1,3 +1,12 @@
+<script setup>
+import { useRouter } from "vue-router";
+import NextButttonComponent from "./NextButttonComponent.vue";
+
+const router = useRouter();
+const handleClickNextButton = () => {
+  router.push("/");
+};
+</script>
 <template>
   <div
     class="flex flex-col justify-start items-center bg-result-background bg-no-repeat bg-bottom gap-6"
@@ -39,17 +48,5 @@
     </div>
   </div>
 </template>
-<script>
-import router from "@/router/router";
-import NextButttonComponent from "./NextButttonComponent.vue";
-export default {
-  components: { NextButttonComponent },
-  setup() {
-    const handleClickNextButton = () => {
-      router.push("/");
-    };
-    return { handleClickNextButton };
-  },
-};
-</script>
+
 <style></style>

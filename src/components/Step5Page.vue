@@ -1,3 +1,16 @@
+<script setup>
+import { usePageStepStore } from "@/stores/store";
+import CustomBoxComponent from "./CustomBoxComponent.vue";
+import NextButttonComponent from "./NextButttonComponent.vue";
+import router from "@/router/router";
+
+const data = ["아주 많이", "많이", "보통", "조금", "아주 조금", "안친함"];
+const pageStepStore = usePageStepStore();
+pageStepStore.updatePageStep(5);
+const handleClickNextButton = () => {
+  router.push("/step/6");
+};
+</script>
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
     <div class="flex-1 flex flex-col pt-10 gap-4">
@@ -13,28 +26,5 @@
     <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
-
-<script>
-import { usePageStepStore } from "@/stores/store";
-import CustomBoxComponent from "./CustomBoxComponent.vue";
-import NextButttonComponent from "./NextButttonComponent.vue";
-import router from "@/router/router";
-
-export default {
-  components: { CustomBoxComponent, NextButttonComponent },
-  setup() {
-    const data = ["아주 많이", "많이", "보통", "조금", "아주 조금", "안친함"];
-    const pageStepStore = usePageStepStore();
-    pageStepStore.updatePageStep(5);
-    const handleClickNextButton = () => {
-      router.push("/step/6");
-    };
-    return {
-      data,
-      handleClickNextButton,
-    };
-  },
-};
-</script>
 
 <style></style>

@@ -1,3 +1,16 @@
+<script setup>
+import { useRouter } from "vue-router";
+import CustomInputComponent from "./CustomInputComponent.vue";
+import NextButttonComponent from "./NextButttonComponent.vue";
+import { usePageStepStore } from "@/stores/store";
+
+const router = useRouter();
+const pageStepStore = usePageStepStore();
+pageStepStore.updatePageStep(3);
+const handleClickNextButton = () => {
+  router.push("/step/4");
+};
+</script>
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
     <div class="flex-1 flex flex-col pt-10 gap-4">
@@ -8,22 +21,4 @@
   </div>
 </template>
 
-<script>
-import { useRouter } from "vue-router";
-import CustomInputComponent from "./CustomInputComponent.vue";
-import NextButttonComponent from "./NextButttonComponent.vue";
-import { usePageStepStore } from "@/stores/store";
-export default {
-  setup() {
-    const router = useRouter();
-    const pageStepStore = usePageStepStore();
-    pageStepStore.updatePageStep(3);
-    const handleClickNextButton = () => {
-      router.push("/step/4");
-    };
-    return { handleClickNextButton };
-  },
-  components: { CustomInputComponent, NextButttonComponent },
-};
-</script>
 <style></style>

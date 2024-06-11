@@ -1,3 +1,10 @@
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+const handleClickStartButton = () => {
+  router.push("/step/1");
+};
+</script>
 <template>
   <div
     class="h-full flex flex-col justify-center items-center bg-main-background bg-no-repeat bg-bottom"
@@ -17,15 +24,5 @@
     </button>
   </div>
 </template>
-
-<script>
-export default {
-  methods: {
-    handleClickStartButton() {
-      this.$router.push("/step/1");
-    },
-  },
-};
-</script>
 
 <style></style>

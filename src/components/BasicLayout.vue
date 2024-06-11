@@ -1,3 +1,7 @@
+<script setup>
+import HeaderBar from "./HeaderBar.vue";
+import ProgressBar from "./ProgressBar.vue";
+</script>
 <template>
   <div class="flex flex-col justify-center items-center h-full">
     <HeaderBar />
@@ -7,17 +11,5 @@
     </div>
   </div>
 </template>
-
-<script>
-import HeaderBar from "./HeaderBar.vue";
-import ProgressBar from "./ProgressBar.vue";
-
-export default {
-  components: {
-    HeaderBar,
-    ProgressBar,
-  },
-};
-</script>
 
 <style></style>
