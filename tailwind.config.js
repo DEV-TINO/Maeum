@@ -12,7 +12,7 @@ export default {
       },
       backgroundImage: {
         "main-background": "url(/images/main-background.png)",
-        "result-bacground": "url(/images/result-background.png)",
+        "result-background": "url(/images/result-background.png)",
       },
     },
   },

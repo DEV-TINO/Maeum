@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-full flex flex-col justify-start items-center bg-result-bacground bg-no-repeat bg-bottom"
+    class="h-full flex flex-col justify-start items-center bg-result-background bg-no-repeat bg-bottom"
   >
     <h1 class="w-5/6 mt-28 mb-8 text-left font-bold text-xl text leading-9">
       스크립트를 생성하고 있어요. <br />

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col justify-start items-center bg-result-bacground bg-no-repeat bg-bottom gap-6"
+    class="flex flex-col justify-start items-center bg-result-background bg-no-repeat bg-bottom gap-6"
   >
     <div class="w-5/6 text-left mt-28">
       <h2 class="text-xl font-bold">
