@@ -17,7 +17,9 @@ const progressBarStep = (step) => {
         class="bg-primary-color rounded-full h-full"
       ></div>
     </div>
-    <h1>{{ pageStepStore.pageStep }}/6</h1>
+    <h1 class="text-primary-color font-semibold">
+      {{ pageStepStore.pageStep }}/6
+    </h1>
   </div>
 </template>
 
