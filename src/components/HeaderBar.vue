@@ -1,10 +1,9 @@
-<script>
-export default {
-  methods: {
-    handleClickMoveToStep1() {
-      this.$router.go(-1);
-    },
-  },
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const handleClickMoveToStep1 = () => {
+  router.go(-1);
 };
 </script>
 <template>
