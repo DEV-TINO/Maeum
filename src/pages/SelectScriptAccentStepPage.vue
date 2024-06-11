@@ -1,6 +1,6 @@
 <script setup>
-import CustomBoxComponent from "./CustomBoxComponent.vue";
-import NextButttonComponent from "./NextButttonComponent.vue";
+import CustomBoxComponent from "../components/CustomBoxComponent.vue";
+import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 import router from "@/router/router";
 

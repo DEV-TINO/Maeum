@@ -4,39 +4,57 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: () => import("../components/MainPage.vue"),
+      component: () => import("../pages/MainPage.vue"),
     },
     {
       path: "/step",
       component: () => import("../components/BasicLayout.vue"),
       children: [
-        { path: "1", component: () => import("../components/Step1Page.vue") },
-        { path: "2", component: () => import("../components/Step2Page.vue") },
-        { path: "3", component: () => import("../components/Step3Page.vue") },
+        {
+          path: "1",
+          component: () => import("../pages/InputUserNameStepPage.vue"),
+        },
+        {
+          path: "2",
+          component: () => import("../pages/InputOpponentNameStepPage.vue"),
+        },
+        {
+          path: "3",
+          component: () => import("../pages/SelectEventStepPage.vue"),
+        },
         {
           path: "3/1",
-          component: () => import("../components/Step3-1Page.vue"),
+          component: () => import("../pages/SelectHappyEventStepPage.vue"),
         },
         {
           path: "3/2",
-          component: () => import("../components/Step3-2Page.vue"),
+          component: () => import("../pages/SelectSadEventStepPage.vue"),
         },
         {
           path: "3/3",
-          component: () => import("../components/Step3-3Page.vue"),
+          component: () => import("../pages/InputOtherEventStepPage.vue"),
         },
-        { path: "4", component: () => import("../components/Step4Page.vue") },
-        { path: "5", component: () => import("../components/Step5Page.vue") },
-        { path: "6", component: () => import("../components/Step6Page.vue") },
+        {
+          path: "4",
+          component: () => import("../pages/SelectScriptLengthStepPage.vue"),
+        },
+        {
+          path: "5",
+          component: () => import("../pages/SelectIntimacyStepPage.vue"),
+        },
+        {
+          path: "6",
+          component: () => import("../pages/SelectScriptAccentStepPage.vue"),
+        },
       ],
     },
     {
       path: "/loading",
-      component: () => import("../components/LoadingPage.vue"),
+      component: () => import("../pages/LoadingPage.vue"),
     },
     {
       path: "/result",
-      component: () => import("../components/ResultPage.vue"),
+      component: () => import("../pages/ResultPage.vue"),
     },
   ],
 });

@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from "vue-router";
-import CustomInputComponent from "./CustomInputComponent.vue";
-import NextButttonComponent from "./NextButttonComponent.vue";
+import CustomInputComponent from "../components/CustomInputComponent.vue";
+import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
 const router = useRouter();

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
-import CustomBoxComponent from "./CustomBoxComponent.vue";
-import NextButttonComponent from "./NextButttonComponent.vue";
+import CustomBoxComponent from "../components/CustomBoxComponent.vue";
+import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { useRouter } from "vue-router";
 import { usePageStepStore } from "@/stores/store";
 

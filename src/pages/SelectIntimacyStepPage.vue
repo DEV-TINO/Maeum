@@ -1,7 +1,7 @@
 <script setup>
 import { usePageStepStore } from "@/stores/store";
-import CustomBoxComponent from "./CustomBoxComponent.vue";
-import NextButttonComponent from "./NextButttonComponent.vue";
+import CustomBoxComponent from "../components/CustomBoxComponent.vue";
+import NextButttonComponent from "../components/NextButttonComponent.vue";
 import router from "@/router/router";
 
 const data = ["아주 많이", "많이", "보통", "조금", "아주 조금", "안친함"];
