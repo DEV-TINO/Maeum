@@ -10,7 +10,7 @@ const handleClickMoveToStep1 = () => {
   <div class="mt-8 px-2 flex flex-row w-full">
     <img
       src="/public/images/header-previous.png"
-      @click="handleClickMoveToStep1"
+      @click="handleClickMoveToStep1()"
     />
     <div class="flex-1"></div>
   </div>

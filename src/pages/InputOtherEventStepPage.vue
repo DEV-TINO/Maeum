@@ -17,7 +17,7 @@ const handleClickNextButton = () => {
       <label class="block font-bold">어떤 스크립트를 생성하고 싶나요?</label>
       <CustomInputComponent />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
   </div>
 </template>
 

@@ -23,7 +23,7 @@ const handleClickNextButton = () => {
         />
       </div>
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
   </div>
 </template>
 

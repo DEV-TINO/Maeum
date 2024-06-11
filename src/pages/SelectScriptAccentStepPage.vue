@@ -35,7 +35,7 @@ const data = [
         />
       </div>
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
   </div>
 </template>
 

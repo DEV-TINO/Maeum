@@ -43,7 +43,7 @@ const handleClickNextButton = () => {
         text="이미지 저장"
       /><NextButttonComponent
         text="다시하기"
-        :handleClickNextButton="handleClickNextButton"
+        :handleClickNextButton="handleClickNextButton()"
       />
     </div>
   </div>

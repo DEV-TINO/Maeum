@@ -18,7 +18,7 @@ const handleClickStartButton = () => {
     </div>
     <button
       class="my-11 h-14 w-11/12 bg-white rounded-2xl text-button-color font-bold"
-      @click="handleClickStartButton"
+      @click="handleClickStartButton()"
     >
       시작하기
     </button>

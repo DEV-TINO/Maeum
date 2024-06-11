@@ -9,7 +9,7 @@ const data = ["경사", "조사", "기타"];
 const router = useRouter();
 const pageStepStore = usePageStepStore();
 const selectedIndex = ref(0);
-const handleClickBox = (idx) => {
+const handleClickCustomBox = (idx) => {
   console.log(idx);
   selectedIndex.value = idx;
 };
@@ -27,10 +27,10 @@ const handleClickNextButton = () => {
         :key="index"
         :text="item"
         class="text-left"
-        @click="handleClickBox(index)"
+        @click="handleClickCustomBox(index)"
       />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
   </div>
 </template>
 

@@ -17,7 +17,7 @@ const handleClickNextButton = () => {
       <label class="block font-bold">이름을 입력해주세요</label>
       <CustomInputComponent />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
   </div>
 </template>
 <style></style>
