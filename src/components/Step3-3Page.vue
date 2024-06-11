@@ -12,12 +12,12 @@
 import { useRouter } from "vue-router";
 import CustomInputComponent from "./CustomInputComponent.vue";
 import NextButttonComponent from "./NextButttonComponent.vue";
-import { useStore } from "@/stores/store";
+import { usePageStepStore } from "@/stores/store";
 export default {
   setup() {
     const router = useRouter();
-    const store = useStore();
-    store.updatePageStep(3);
+    const pageStepStore = usePageStepStore();
+    pageStepStore.updatePageStep(3);
     const handleClickNextButton = () => {
       router.push("/step/4");
     };

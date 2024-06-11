@@ -17,12 +17,12 @@
 import { useRouter } from "vue-router";
 import CustomBoxComponent from "./CustomBoxComponent.vue";
 import NextButttonComponent from "./NextButttonComponent.vue";
-import { useStore } from "@/stores/store";
+import { usePageStepStore } from "@/stores/store";
 export default {
   setup() {
     const router = useRouter();
-    const store = useStore();
-    store.updatePageStep(4);
+    const pageStepStore = usePageStepStore();
+    pageStepStore.updatePageStep(4);
     const data = ["1분", "3분", "5분", "7분", "10분"];
     const handleClickNextButton = () => {
       router.push("/step/5");

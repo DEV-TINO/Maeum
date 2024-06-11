@@ -21,13 +21,13 @@
 import router from "@/router/router";
 import CustomBoxComponent from "./CustomBoxComponent.vue";
 import NextButttonComponent from "./NextButttonComponent.vue";
-import { useStore } from "@/stores/store";
+import { usePageStepStore } from "@/stores/store";
 
 export default {
   components: { CustomBoxComponent, NextButttonComponent },
   setup() {
-    const store = useStore();
-    store.updatePageStep(3);
+    const pageStepStore = usePageStepStore();
+    pageStepStore.updatePageStep(3);
     const data = [
       "장례",
       "추모",

@@ -1,4 +1,3 @@
-import { useStore } from "@/stores/store";
 import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(),

@@ -19,14 +19,14 @@
 <script>
 import CustomBoxComponent from "./CustomBoxComponent.vue";
 import NextButttonComponent from "./NextButttonComponent.vue";
-import { useStore } from "@/stores/store";
+import { usePageStepStore } from "@/stores/store";
 import router from "@/router/router";
 
 export default {
   components: { CustomBoxComponent, NextButttonComponent },
   setup() {
-    const store = useStore();
-    store.updatePageStep(6);
+    const pageStepStore = usePageStepStore();
+    pageStepStore.updatePageStep(6);
     const handleClickNextButton = () => {
       router.push("/loading");
     };

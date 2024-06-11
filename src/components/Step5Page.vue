@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { useStore } from "@/stores/store";
+import { usePageStepStore } from "@/stores/store";
 import CustomBoxComponent from "./CustomBoxComponent.vue";
 import NextButttonComponent from "./NextButttonComponent.vue";
 import router from "@/router/router";
@@ -24,8 +24,8 @@ export default {
   components: { CustomBoxComponent, NextButttonComponent },
   setup() {
     const data = ["아주 많이", "많이", "보통", "조금", "아주 조금", "안친함"];
-    const store = useStore();
-    store.updatePageStep(5);
+    const pageStepStore = usePageStepStore();
+    pageStepStore.updatePageStep(5);
     const handleClickNextButton = () => {
       router.push("/step/6");
     };

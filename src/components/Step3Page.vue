@@ -19,20 +19,20 @@ import { ref } from "vue";
 import CustomBoxComponent from "./CustomBoxComponent.vue";
 import NextButttonComponent from "./NextButttonComponent.vue";
 import { useRouter } from "vue-router";
-import { useStore } from "@/stores/store";
+import { usePageStepStore } from "@/stores/store";
 
 export default {
   components: { CustomBoxComponent, NextButttonComponent },
   setup() {
     const data = ref(["경사", "조사", "기타"]);
     const router = useRouter();
-    const store = useStore();
+    const pageStepStore = usePageStepStore();
     const selectedIndex = ref(0);
     const handleClickBox = (idx) => {
       console.log(idx);
       selectedIndex.value = idx;
     };
-    store.updatePageStep(3);
+    pageStepStore.updatePageStep(3);
     const handleClickNextButton = () => {
       router.push(`/step/3/${selectedIndex.value + 1}`);
     };
