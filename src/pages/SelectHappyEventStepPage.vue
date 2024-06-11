@@ -6,7 +6,7 @@ import { usePageStepStore } from "@/stores/store";
 
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(3);
-const data = [
+const happyEventData = [
   "결혼",
   "생일",
   "승진",
@@ -30,9 +30,9 @@ const handleClickNextButton = () => {
       <label class="block font-bold">어떤 경사인가요?</label>
       <div class="grid grid-cols-3 text-center gap-2 gap-y-3 text-lg">
         <CustomBoxComponent
-          v-for="(item, index) in data"
+          v-for="(happyEvent, index) in happyEventData"
           :key="index"
-          :text="item"
+          :text="happyEvent"
         />
       </div>
       <h4 class="text-center font-semibold text-sm text-[#AFAFAF]">

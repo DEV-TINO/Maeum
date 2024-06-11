@@ -4,7 +4,14 @@ import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import router from "@/router/router";
 
-const data = ["아주 많이", "많이", "보통", "조금", "아주 조금", "안친함"];
+const intimacyData = [
+  "아주 많이",
+  "많이",
+  "보통",
+  "조금",
+  "아주 조금",
+  "안친함",
+];
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(5);
 const handleClickNextButton = () => {
@@ -17,9 +24,9 @@ const handleClickNextButton = () => {
       <label class="block font-bold">상대방과 얼마나 친하시나요?</label>
       <div class="grid grid-cols-3 text-center gap-2 gap-y-3 text-lg">
         <CustomBoxComponent
-          v-for="(item, index) in data"
+          v-for="(intimacy, index) in intimacyData"
           :key="index"
-          :text="item"
+          :text="intimacy"
         />
       </div>
     </div>

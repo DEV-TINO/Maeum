@@ -7,7 +7,7 @@ import { usePageStepStore } from "@/stores/store";
 const router = useRouter();
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(4);
-const data = ["1분", "3분", "5분", "7분", "10분"];
+const scriptLengthData = ["1분", "3분", "5분", "7분", "10분"];
 const handleClickNextButton = () => {
   router.push("/script/intimacy");
 };
@@ -18,9 +18,9 @@ const handleClickNextButton = () => {
       <label class="block font-bold">몇 분 정도의 스크립트를 원하시나요?</label>
       <CustomBoxComponent
         class="text-left"
-        v-for="(item, index) in data"
+        v-for="(scriptLength, index) in scriptLengthData"
         :key="index"
-        :text="item"
+        :text="scriptLength"
       />
     </div>
     <NextButttonComponent :handleClickNextButton="handleClickNextButton" />

@@ -5,7 +5,7 @@ import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(3);
-const data = [
+const sadEventData = [
   "장례",
   "추모",
   "제사",
@@ -29,9 +29,9 @@ const handleClickNextButton = () => {
       <label class="block font-bold">어떤 조사인가요?</label>
       <div class="grid grid-cols-3 text-center gap-2 gap-y-3 text-lg">
         <CustomBoxComponent
-          v-for="(item, index) in data"
+          v-for="(sadEvent, index) in sadEventData"
           :key="index"
-          :text="item"
+          :text="sadEvent"
         />
       </div>
       <h4 class="text-center font-semibold text-sm text-[#AFAFAF]">

@@ -9,7 +9,7 @@ pageStepStore.updatePageStep(6);
 const handleClickNextButton = () => {
   router.push("/loading");
 };
-const data = [
+const accentData = [
   "다정한",
   "공손한",
   "친근한",
@@ -29,9 +29,9 @@ const data = [
       >
       <div class="grid grid-cols-3 text-center gap-2 gap-y-3 text-lg">
         <CustomBoxComponent
-          v-for="(item, index) in data"
+          v-for="(accent, index) in accentData"
           :key="index"
-          :text="item"
+          :text="accent"
         />
       </div>
     </div>
