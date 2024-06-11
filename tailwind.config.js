@@ -9,6 +9,7 @@ export default {
         "box-color": "#F4F4F4",
         "select-box-color": "#FFE1E1",
         "text-color": "#383838",
+        "bright-text-color": "#AFAFAF",
       },
       backgroundImage: {
         "main-background": "url(/images/main-background.png)",

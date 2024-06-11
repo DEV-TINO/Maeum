@@ -2,12 +2,18 @@
 import { usePageStepStore } from "@/stores/store";
 
 const pageStepStore = usePageStepStore();
+const MAX_PAGE_STEP = 6;
+const progressBarStep = (step) => {
+  return {
+    width: `${(step / MAX_PAGE_STEP) * 100}%`,
+  };
+};
 </script>
 <template>
   <div class="w-full flex flex-row justify-between items-center px-6">
     <div class="w-72 h-2 bg-box-color rounded-full relative">
       <div
-        :style="{ width: `${(pageStepStore.pageStep / 6) * 100}%` }"
+        :style="progressBarStep(pageStepStore.pageStep)"
         class="bg-primary-color rounded-full h-full"
       ></div>
     </div>

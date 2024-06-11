@@ -34,7 +34,7 @@ const handleClickNextButton = () => {
           :text="sadEvent"
         />
       </div>
-      <h4 class="text-center font-semibold text-sm text-[#AFAFAF]">
+      <h4 class="text-center font-semibold text-sm text-bright-text-color">
         여기에 없으신가요?
       </h4>
     </div>
