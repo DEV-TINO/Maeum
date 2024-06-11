@@ -15,7 +15,13 @@ const handleClickCustomBox = (idx) => {
 };
 pageStepStore.updatePageStep(3);
 const handleClickNextButton = () => {
-  router.push(`/step/3/${selectedIndex.value + 1}`);
+  if (selectedIndex.value === 0) {
+    router.push("/script/event/happy");
+  } else if (selectedIndex.value === 1) {
+    router.push("/script/event/sad");
+  } else {
+    router.push("/script/event/other");
+  }
 };
 </script>
 <template>
@@ -30,7 +36,7 @@ const handleClickNextButton = () => {
         @click="handleClickCustomBox(index)"
       />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

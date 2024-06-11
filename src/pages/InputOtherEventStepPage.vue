@@ -8,7 +8,7 @@ const router = useRouter();
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(3);
 const handleClickNextButton = () => {
-  router.push("/step/4");
+  router.push("/script/length");
 };
 </script>
 <template>
@@ -17,7 +17,7 @@ const handleClickNextButton = () => {
       <label class="block font-bold">어떤 스크립트를 생성하고 싶나요?</label>
       <CustomInputComponent />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

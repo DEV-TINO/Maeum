@@ -8,7 +8,7 @@ const data = ["아주 많이", "많이", "보통", "조금", "아주 조금", "�
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(5);
 const handleClickNextButton = () => {
-  router.push("/step/6");
+  router.push("/script/accent");
 };
 </script>
 <template>
@@ -23,7 +23,7 @@ const handleClickNextButton = () => {
         />
       </div>
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

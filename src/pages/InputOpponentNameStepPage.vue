@@ -8,7 +8,7 @@ const router = useRouter();
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(2);
 const handleClickNextButton = () => {
-  router.push("/step/3");
+  router.push("/script/event");
 };
 </script>
 <template>
@@ -17,7 +17,7 @@ const handleClickNextButton = () => {
       <label class="block font-bold">스크립트를 받을 사람의 이름은?</label>
       <CustomInputComponent />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

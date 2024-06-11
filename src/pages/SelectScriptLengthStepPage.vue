@@ -9,7 +9,7 @@ const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(4);
 const data = ["1분", "3분", "5분", "7분", "10분"];
 const handleClickNextButton = () => {
-  router.push("/step/5");
+  router.push("/script/intimacy");
 };
 </script>
 <template>
@@ -23,7 +23,7 @@ const handleClickNextButton = () => {
         :text="item"
       />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

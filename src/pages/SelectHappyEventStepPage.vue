@@ -21,7 +21,7 @@ const data = [
   "취업",
 ];
 const handleClickNextButton = () => {
-  router.push("/step/4");
+  router.push("/script/length");
 };
 </script>
 <template>
@@ -39,7 +39,7 @@ const handleClickNextButton = () => {
         여기에 없으신가요?
       </h4>
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton()" />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

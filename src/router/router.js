@@ -7,43 +7,43 @@ const router = createRouter({
       component: () => import("../pages/MainPage.vue"),
     },
     {
-      path: "/step",
+      path: "/script",
       component: () => import("../components/BasicLayout.vue"),
       children: [
         {
-          path: "1",
+          path: "username",
           component: () => import("../pages/InputUserNameStepPage.vue"),
         },
         {
-          path: "2",
+          path: "opponentname",
           component: () => import("../pages/InputOpponentNameStepPage.vue"),
         },
         {
-          path: "3",
+          path: "event",
           component: () => import("../pages/SelectEventStepPage.vue"),
         },
         {
-          path: "3/1",
+          path: "event/happy",
           component: () => import("../pages/SelectHappyEventStepPage.vue"),
         },
         {
-          path: "3/2",
+          path: "event/sad",
           component: () => import("../pages/SelectSadEventStepPage.vue"),
         },
         {
-          path: "3/3",
+          path: "event/other",
           component: () => import("../pages/InputOtherEventStepPage.vue"),
         },
         {
-          path: "4",
+          path: "length",
           component: () => import("../pages/SelectScriptLengthStepPage.vue"),
         },
         {
-          path: "5",
+          path: "intimacy",
           component: () => import("../pages/SelectIntimacyStepPage.vue"),
         },
         {
-          path: "6",
+          path: "accent",
           component: () => import("../pages/SelectScriptAccentStepPage.vue"),
         },
       ],

@@ -2,7 +2,8 @@
 import { useRouter } from "vue-router";
 const router = useRouter();
 const handleClickStartButton = () => {
-  router.push("/step/1");
+  console.log("click start button");
+  router.push("/script/username");
 };
 </script>
 <template>
@@ -18,7 +19,7 @@ const handleClickStartButton = () => {
     </div>
     <button
       class="my-11 h-14 w-11/12 bg-white rounded-2xl text-button-color font-bold"
-      @click="handleClickStartButton()"
+      @click="handleClickStartButton"
     >
       시작하기
     </button>
