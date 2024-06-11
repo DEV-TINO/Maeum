@@ -14,7 +14,7 @@ const props = defineProps({
     @click="handleClickNextButton"
     class="w-full h-12 my-11 bg-button-color text-white text-lg rounded-2xl font-bold"
   >
-    {{ text == null ? "다음" : text }}
+    {{ text ?? "다음" }}
   </button>
 </template>
 
