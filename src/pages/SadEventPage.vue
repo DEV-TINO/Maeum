@@ -1,10 +1,9 @@
 <script setup>
-import router from "@/router/router";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
+
 const pageStepStore = usePageStepStore();
-pageStepStore.updatePageStep(3);
 const sadEventData = [
   "장례",
   "추모",
@@ -19,10 +18,8 @@ const sadEventData = [
   "자연재해",
   "유산",
 ];
-const handleClickNextButton = () => {
-  router.push({ name: "letterCount" });
-};
 </script>
+
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
     <div class="flex-1 flex flex-col pt-10 gap-4">
@@ -38,7 +35,9 @@ const handleClickNextButton = () => {
         여기에 없으신가요?
       </h4>
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent
+      :handleClickNextButton="pageStepStore.handleClickNextButton"
+    />
   </div>
 </template>
 

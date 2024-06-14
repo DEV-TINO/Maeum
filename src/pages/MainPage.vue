@@ -1,10 +1,11 @@
 <script setup>
-import { useRouter } from "vue-router";
-const router = useRouter();
+import { usePageStepStore } from "@/stores/store";
 const handleClickStartButton = () => {
-  router.push({ name: "user" });
+  pageStepStore.handleClickNextButton();
 };
+const pageStepStore = usePageStepStore();
 </script>
+
 <template>
   <div
     class="h-full flex flex-col justify-center items-center bg-main-background bg-no-repeat bg-bottom"

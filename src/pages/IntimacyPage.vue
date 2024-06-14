@@ -2,7 +2,6 @@
 import { usePageStepStore } from "@/stores/store";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
-import router from "@/router/router";
 
 const intimacyData = [
   "아주 많이",
@@ -13,11 +12,8 @@ const intimacyData = [
   "안친함",
 ];
 const pageStepStore = usePageStepStore();
-pageStepStore.updatePageStep(5);
-const handleClickNextButton = () => {
-  router.push({ name: "speech" });
-};
 </script>
+
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
     <div class="flex-1 flex flex-col pt-10 gap-4">
@@ -30,7 +26,9 @@ const handleClickNextButton = () => {
         />
       </div>
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent
+      :handleClickNextButton="pageStepStore.handleClickNextButton"
+    />
   </div>
 </template>
 

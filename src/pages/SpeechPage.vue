@@ -2,13 +2,8 @@
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
-import router from "@/router/router";
 
 const pageStepStore = usePageStepStore();
-pageStepStore.updatePageStep(6);
-const handleClickNextButton = () => {
-  router.push("/loading");
-};
 const accentData = [
   "다정한",
   "공손한",
@@ -21,6 +16,7 @@ const accentData = [
   "격식적",
 ];
 </script>
+
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
     <div class="flex-1 flex flex-col pt-10 gap-4">
@@ -35,7 +31,9 @@ const accentData = [
         />
       </div>
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent
+      :handleClickNextButton="pageStepStore.handleClickNextButton"
+    />
   </div>
 </template>
 

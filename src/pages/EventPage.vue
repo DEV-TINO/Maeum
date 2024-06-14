@@ -3,17 +3,14 @@ import { ref } from "vue";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { useRouter } from "vue-router";
-import { usePageStepStore } from "@/stores/store";
 
 const eventTypeData = ["경사", "조사", "기타"];
 const router = useRouter();
-const pageStepStore = usePageStepStore();
-const selectedIndex = ref(0);
+const selectedIndex = ref(-1);
 const handleClickCustomBox = (idx) => {
   console.log(idx);
   selectedIndex.value = idx;
 };
-pageStepStore.updatePageStep(3);
 const handleClickNextButton = () => {
   if (selectedIndex.value === 0) {
     router.push({ name: "eventHappy" });

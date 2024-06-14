@@ -1,17 +1,12 @@
 <script setup>
-import { useRouter } from "vue-router";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
-const router = useRouter();
 const pageStepStore = usePageStepStore();
-pageStepStore.updatePageStep(4);
 const scriptLengthData = ["1분", "3분", "5분", "7분", "10분"];
-const handleClickNextButton = () => {
-  router.push({ name: "intimacy" });
-};
 </script>
+
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
     <div class="flex-1 flex flex-col pt-10 gap-4">
@@ -23,7 +18,9 @@ const handleClickNextButton = () => {
         :text="scriptLength"
       />
     </div>
-    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
+    <NextButttonComponent
+      :handleClickNextButton="pageStepStore.handleClickNextButton"
+    />
   </div>
 </template>
 
