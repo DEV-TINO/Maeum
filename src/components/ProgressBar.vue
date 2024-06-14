@@ -18,7 +18,7 @@ const progressBarStep = (step) => {
       ></div>
     </div>
     <h1 class="text-primary-color font-semibold">
-      {{ pageStepStore.pageStep }}/6
+      {{ pageStepStore.pageStep }}/{{ MAX_PAGE_STEP }}
     </h1>
   </div>
 </template>
