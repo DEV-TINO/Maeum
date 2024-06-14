@@ -1,8 +1,6 @@
 <script setup>
 import { usePageStepStore } from "@/stores/store";
-const handleClickStartButton = () => {
-  pageStepStore.handleClickNextButton();
-};
+
 const pageStepStore = usePageStepStore();
 </script>
 
@@ -19,7 +17,7 @@ const pageStepStore = usePageStepStore();
     </div>
     <button
       class="my-11 h-14 w-11/12 bg-white rounded-2xl text-button-color font-bold"
-      @click="handleClickStartButton"
+      @click="pageStepStore.handleClickNextButton()"
     >
       시작하기
     </button>
