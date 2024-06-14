@@ -15,7 +15,7 @@ const intimacyData = [
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(5);
 const handleClickNextButton = () => {
-  router.push("/script/accent");
+  router.push({ name: "speech" });
 };
 </script>
 <template>

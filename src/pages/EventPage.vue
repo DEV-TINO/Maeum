@@ -16,11 +16,11 @@ const handleClickCustomBox = (idx) => {
 pageStepStore.updatePageStep(3);
 const handleClickNextButton = () => {
   if (selectedIndex.value === 0) {
-    router.push("/script/event/happy");
+    router.push({ name: "eventHappy" });
   } else if (selectedIndex.value === 1) {
-    router.push("/script/event/sad");
+    router.push({ name: "eventSad" });
   } else {
-    router.push("/script/event/other");
+    router.push({ name: "eventOther" });
   }
 };
 </script>

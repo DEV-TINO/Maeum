@@ -8,7 +8,7 @@ const router = useRouter();
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(2);
 const handleClickNextButton = () => {
-  router.push("/script/event");
+  router.push({ name: "event" });
 };
 </script>
 <template>

@@ -2,8 +2,7 @@
 import { useRouter } from "vue-router";
 const router = useRouter();
 const handleClickStartButton = () => {
-  console.log("click start button");
-  router.push("/script/username");
+  router.push({ name: "user" });
 };
 </script>
 <template>

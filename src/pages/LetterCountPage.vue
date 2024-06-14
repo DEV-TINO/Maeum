@@ -9,7 +9,7 @@ const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(4);
 const scriptLengthData = ["1분", "3분", "5분", "7분", "10분"];
 const handleClickNextButton = () => {
-  router.push("/script/intimacy");
+  router.push({ name: "intimacy" });
 };
 </script>
 <template>

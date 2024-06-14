@@ -20,7 +20,7 @@ const sadEventData = [
   "유산",
 ];
 const handleClickNextButton = () => {
-  router.push("/script/length");
+  router.push({ name: "letterCount" });
 };
 </script>
 <template>

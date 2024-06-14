@@ -8,7 +8,7 @@ const router = useRouter();
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(3);
 const handleClickNextButton = () => {
-  router.push("/script/length");
+  router.push({ name: "letterCount" });
 };
 </script>
 <template>

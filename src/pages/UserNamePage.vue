@@ -8,7 +8,7 @@ const router = useRouter();
 const pageStepStore = usePageStepStore();
 pageStepStore.updatePageStep(1);
 const handleClickNextButton = () => {
-  router.push("/script/opponentname");
+  router.push({ name: "opponent" });
 };
 </script>
 <template>
