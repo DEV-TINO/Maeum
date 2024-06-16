@@ -2,6 +2,7 @@
 import { usePageStepStore } from "@/stores/store";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
+import { ref } from "vue";
 
 const intimacyData = [
   "아주 많이",
@@ -11,6 +12,19 @@ const intimacyData = [
   "아주 조금",
   "안친함",
 ];
+const selectedIndex = ref(-1);
+
+const handleClickCustomBox = (idx) => {
+  selectedIndex.value = idx;
+};
+
+const handleClickNextButton = () => {
+  if (selectedIndex.value === -1) {
+    return;
+  }
+  pageStepStore.saveScriptData(intimacyData[selectedIndex.value]);
+  pageStepStore.handleClickNextButton();
+};
 const pageStepStore = usePageStepStore();
 </script>
 
@@ -23,12 +37,11 @@ const pageStepStore = usePageStepStore();
           v-for="(intimacy, index) in intimacyData"
           :key="index"
           :text="intimacy"
+          @click="handleClickCustomBox(index)"
         />
       </div>
     </div>
-    <NextButttonComponent
-      :handleClickNextButton="pageStepStore.handleClickNextButton"
-    />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

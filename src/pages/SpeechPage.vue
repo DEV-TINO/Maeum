@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
@@ -15,6 +16,19 @@ const accentData = [
   "강압적",
   "격식적",
 ];
+const selectedIndex = ref(-1);
+
+const handleClickCustomBox = (idx) => {
+  selectedIndex.value = idx;
+};
+
+const handleClickNextButton = () => {
+  if (selectedIndex.value === -1) {
+    return;
+  }
+  pageStepStore.saveScriptData(accentData[selectedIndex.value]);
+  pageStepStore.handleClickNextButton();
+};
 </script>
 
 <template>
@@ -28,12 +42,11 @@ const accentData = [
           v-for="(accent, index) in accentData"
           :key="index"
           :text="accent"
+          @click="handleClickCustomBox(index)"
         />
       </div>
     </div>
-    <NextButttonComponent
-      :handleClickNextButton="pageStepStore.handleClickNextButton"
-    />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

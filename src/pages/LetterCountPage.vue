@@ -1,10 +1,24 @@
 <script setup>
+import { ref } from "vue";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
 const pageStepStore = usePageStepStore();
 const scriptLengthData = ["1분", "3분", "5분", "7분", "10분"];
+const selectedIndex = ref(-1);
+
+const handleClickCustomBox = (idx) => {
+  selectedIndex.value = idx;
+};
+
+const handleClickNextButton = () => {
+  if (selectedIndex.value === -1) {
+    return;
+  }
+  pageStepStore.saveScriptData(scriptLengthData[selectedIndex.value]);
+  pageStepStore.handleClickNextButton();
+};
 </script>
 
 <template>
@@ -16,11 +30,10 @@ const scriptLengthData = ["1분", "3분", "5분", "7분", "10분"];
         v-for="(scriptLength, index) in scriptLengthData"
         :key="index"
         :text="scriptLength"
+        @click="handleClickCustomBox(index)"
       />
     </div>
-    <NextButttonComponent
-      :handleClickNextButton="pageStepStore.handleClickNextButton"
-    />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
@@ -18,6 +19,19 @@ const happyEventData = [
   "출산",
   "취업",
 ];
+const selectedIndex = ref(-1);
+
+const handleClickNextButton = () => {
+  if (selectedIndex.value === -1) {
+    return;
+  }
+  pageStepStore.saveScriptData(["경사", happyEventData[selectedIndex.value]]);
+  pageStepStore.handleClickNextButton();
+};
+
+const handleClickCustomBox = (idx) => {
+  selectedIndex.value = idx;
+};
 </script>
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
@@ -28,15 +42,14 @@ const happyEventData = [
           v-for="(happyEvent, index) in happyEventData"
           :key="index"
           :text="happyEvent"
+          @click="handleClickCustomBox(index)"
         />
       </div>
       <h4 class="text-center font-semibold text-sm text-bright-text-color">
         여기에 없으신가요?
       </h4>
     </div>
-    <NextButttonComponent
-      :handleClickNextButton="pageStepStore.handleClickNextButton"
-    />
+    <NextButttonComponent :handleClickNextButton="handleClickNextButton" />
   </div>
 </template>
 
