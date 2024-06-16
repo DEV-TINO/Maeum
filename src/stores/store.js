@@ -14,13 +14,15 @@ const URL_MAP = {
 };
 
 export const usePageStepStore = defineStore("pageStep", () => {
+  const router = useRouter();
+
   const pageStep = ref(0);
+
   const updatePageStep = (value) => {
-    if (pageStep < 0 || pageStep > 7) return;
+    if (value < 0 || value > 7) return;
     pageStep.value = value;
   };
 
-  const router = useRouter();
   const handleClickNextButton = () => {
     updatePageStep(pageStep.value + 1);
   };
@@ -29,5 +31,17 @@ export const usePageStepStore = defineStore("pageStep", () => {
     router.push(URL_MAP[newpageStep]);
   });
 
-  return { pageStep, updatePageStep, handleClickNextButton };
+  const scriptData = ref([]);
+
+  const saveScriptData = (data) => {
+    scriptData.value[pageStep.value - 1] = data;
+  };
+
+  return {
+    pageStep,
+    updatePageStep,
+    handleClickNextButton,
+    scriptData,
+    saveScriptData,
+  };
 });
