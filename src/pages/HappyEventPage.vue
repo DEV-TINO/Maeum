@@ -3,7 +3,9 @@ import { ref } from "vue";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const pageStepStore = usePageStepStore();
 const happyEventData = [
   "결혼",
@@ -32,6 +34,10 @@ const handleClickNextButton = () => {
 const handleClickCustomBox = (idx) => {
   selectedIndex.value = idx;
 };
+
+const moveToOtherEventPage = () => {
+  router.push({ name: "eventOther" });
+};
 </script>
 <template>
   <div class="flex flex-col text-xl text-text-color px-6 h-full">
@@ -49,7 +55,10 @@ const handleClickCustomBox = (idx) => {
           }"
         />
       </div>
-      <h4 class="text-center font-semibold text-sm text-bright-text-color">
+      <h4
+        class="text-center font-semibold text-sm text-bright-text-color"
+        @click="moveToOtherEventPage()"
+      >
         여기에 없으신가요?
       </h4>
     </div>
