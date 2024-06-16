@@ -31,6 +31,10 @@ const handleClickNextButton = () => {
         :key="index"
         :text="scriptLength"
         @click="handleClickCustomBox(index)"
+        :class="{
+          'border-primary-color border-2 bg-select-box-color text-primary-color':
+            selectedIndex === index,
+        }"
       />
     </div>
     <NextButttonComponent :handleClickNextButton="handleClickNextButton" />

@@ -43,6 +43,10 @@ const handleClickCustomBox = (idx) => {
           :key="index"
           :text="happyEvent"
           @click="handleClickCustomBox(index)"
+          :class="{
+            'border-primary-color border-2 bg-select-box-color text-primary-color':
+              selectedIndex === index,
+          }"
         />
       </div>
       <h4 class="text-center font-semibold text-sm text-bright-text-color">

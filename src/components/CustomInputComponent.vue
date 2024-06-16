@@ -19,7 +19,7 @@ const updateInputValue = (value) => {
 
 <template>
   <input
-    class="bg-box-color outline-none h-12 rounded-xl px-2"
+    class="bg-box-color outline-none h-12 rounded-xl px-2 focus:ring-2 focus:ring-primary-color"
     :value="inputValue"
     @input="(event) => updateInputValue(event.target.value)"
   />
