@@ -7,16 +7,17 @@ import { useRouter } from "vue-router";
 const eventTypeData = ["경사", "조사", "기타"];
 const router = useRouter();
 const selectedIndex = ref(-1);
+
 const handleClickCustomBox = (idx) => {
-  console.log(idx);
   selectedIndex.value = idx;
 };
+
 const handleClickNextButton = () => {
   if (selectedIndex.value === 0) {
     router.push({ name: "eventHappy" });
   } else if (selectedIndex.value === 1) {
     router.push({ name: "eventSad" });
-  } else {
+  } else if (selectedIndex.value === 2) {
     router.push({ name: "eventOther" });
   }
 };
