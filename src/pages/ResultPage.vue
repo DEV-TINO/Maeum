@@ -3,13 +3,15 @@ import { useRouter } from "vue-router";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
-const router = useRouter();
-const handleClickNextButton = () => {
-  router.push("/");
+const handleClickRestartButton = () => {
+  pageStepStore.pageStep = 1;
 };
 const pageStepStore = usePageStepStore();
 const result = history.state.resultData;
-console.log(history.state.resultData);
+
+const handleClickQuitButton = () => {
+  pageStepStore.pageStep = 0;
+};
 </script>
 <template>
   <div
@@ -50,10 +52,11 @@ console.log(history.state.resultData);
     <div class="flex flex-row bg-white w-full px-5 gap-6">
       <NextButttonComponent
         class="bg-primary-color"
-        text="이미지 저장"
+        text="종료"
+        :handleClickNextButton="handleClickQuitButton"
       /><NextButttonComponent
         text="다시하기"
-        :handleClickNextButton="handleClickNextButton"
+        :handleClickNextButton="handleClickRestartButton"
       />
     </div>
   </div>
