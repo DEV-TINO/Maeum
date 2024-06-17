@@ -1,24 +1,34 @@
 <script setup>
 import { useRouter } from "vue-router";
-import NextButttonComponent from "./NextButttonComponent.vue";
+import NextButttonComponent from "../components/NextButttonComponent.vue";
+import { usePageStepStore } from "@/stores/store";
 
 const router = useRouter();
 const handleClickNextButton = () => {
   router.push("/");
 };
+const pageStepStore = usePageStepStore();
+const result = history.state.resultData;
+console.log(history.state.resultData);
 </script>
 <template>
   <div
-    class="flex flex-col justify-start items-center bg-result-background bg-no-repeat bg-bottom gap-6"
+    class="flex flex-col justify-start items-center bg-result-background gap-6"
   >
     <div class="w-5/6 text-left mt-28">
       <h2 class="text-xl font-bold">
-        <span class="text-primary-color">희연</span> 님을 위한 <br />
+        <span class="text-primary-color">{{
+          pageStepStore.scriptData[0]
+        }}</span>
+        님을 위한 <br />
         스크립트를 생성했어요!
       </h2>
     </div>
-    <div class="bg-white w-5/6 rounded-2xl p-6 font-medium break-keep">
-      result
+    <div
+      v-if="result"
+      class="bg-white w-5/6 rounded-2xl p-6 font-medium break-keep"
+    >
+      {{ result }}
     </div>
     <h1 class="font-bold mt-2 w-5/6 text-left">
       스크립트를 읽을 때 이런 부분을 조심해주세요!
