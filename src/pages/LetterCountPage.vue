@@ -13,9 +13,8 @@ const handleClickCustomBox = (idx) => {
 };
 
 const handleClickNextButton = () => {
-  if (selectedIndex.value === -1) {
-    return;
-  }
+  if (selectedIndex.value === -1) return;
+
   pageStepStore.saveScriptData(SCRIPT_LEN_DATA[selectedIndex.value]);
   pageStepStore.handleClickNextButton();
 };

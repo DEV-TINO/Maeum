@@ -24,9 +24,8 @@ const HAPPY_EVENT_DATA = [
 const selectedIndex = ref(-1);
 
 const handleClickNextButton = () => {
-  if (selectedIndex.value === -1) {
-    return;
-  }
+  if (selectedIndex.value === -1) return;
+
   pageStepStore.saveScriptData(["경사", HAPPY_EVENT_DATA[selectedIndex.value]]);
   pageStepStore.handleClickNextButton();
 };
