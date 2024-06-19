@@ -7,7 +7,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const pageStepStore = usePageStepStore();
-const happyEventData = [
+const HAPPY_EVENT_DATA = [
   "결혼",
   "생일",
   "승진",
@@ -27,7 +27,7 @@ const handleClickNextButton = () => {
   if (selectedIndex.value === -1) {
     return;
   }
-  pageStepStore.saveScriptData(["경사", happyEventData[selectedIndex.value]]);
+  pageStepStore.saveScriptData(["경사", HAPPY_EVENT_DATA[selectedIndex.value]]);
   pageStepStore.handleClickNextButton();
 };
 
@@ -45,7 +45,7 @@ const moveToOtherEventPage = () => {
       <label class="block font-bold">어떤 경사인가요?</label>
       <div class="grid grid-cols-3 text-center gap-2 gap-y-3 text-lg">
         <CustomBoxComponent
-          v-for="(happyEvent, index) in happyEventData"
+          v-for="(happyEvent, index) in HAPPY_EVENT_DATA"
           :key="index"
           :text="happyEvent"
           @click="handleClickCustomBox(index)"

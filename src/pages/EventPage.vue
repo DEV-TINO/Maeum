@@ -4,7 +4,7 @@ import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { useRouter } from "vue-router";
 
-const eventTypeData = ["경사", "조사", "기타"];
+const EVENT_TYPE_DATA = ["경사", "조사", "기타"];
 const router = useRouter();
 const selectedIndex = ref(-1);
 
@@ -27,7 +27,7 @@ const handleClickNextButton = () => {
     <div class="flex-1 flex flex-col pt-10 gap-4">
       <label class="block font-bold">스크립트의 내용은 무엇인가요?</label>
       <CustomBoxComponent
-        v-for="(eventType, index) in eventTypeData"
+        v-for="(eventType, index) in EVENT_TYPE_DATA"
         :key="index"
         :text="eventType"
         class="text-left"

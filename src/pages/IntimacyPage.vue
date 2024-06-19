@@ -4,7 +4,7 @@ import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { ref } from "vue";
 
-const intimacyData = [
+const INTIMACY_DATA = [
   "아주 많이",
   "많이",
   "보통",
@@ -22,7 +22,7 @@ const handleClickNextButton = () => {
   if (selectedIndex.value === -1) {
     return;
   }
-  pageStepStore.saveScriptData(intimacyData[selectedIndex.value]);
+  pageStepStore.saveScriptData(INTIMACY_DATA[selectedIndex.value]);
   pageStepStore.handleClickNextButton();
 };
 const pageStepStore = usePageStepStore();
@@ -34,7 +34,7 @@ const pageStepStore = usePageStepStore();
       <label class="block font-bold">상대방과 얼마나 친하시나요?</label>
       <div class="grid grid-cols-3 text-center gap-2 gap-y-3 text-lg">
         <CustomBoxComponent
-          v-for="(intimacy, index) in intimacyData"
+          v-for="(intimacy, index) in INTIMACY_DATA"
           :key="index"
           :text="intimacy"
           @click="handleClickCustomBox(index)"
