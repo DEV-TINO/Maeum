@@ -13,7 +13,7 @@ const pageStepStore = usePageStepStore();
       <p class="text-4xl text-primary-color font-extrabold tracking-wide">
         MAEUM
       </p>
-      <img src="../../public/images/main-logo.png" class="w-5/6" />
+      <img src="/images/main-logo.png" class="w-5/6" />
     </div>
     <button
       class="my-11 h-14 w-11/12 bg-white rounded-2xl text-button-color font-bold"
