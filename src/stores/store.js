@@ -1,3 +1,4 @@
+import OpenAI from "openai";
 import { defineStore } from "pinia";
 import { ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
@@ -63,6 +64,11 @@ export const usePageStepStore = defineStore("pageStep", () => {
     scriptData.value[key] = data;
   };
 
+  const openai = new OpenAI({
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true,
+  });
+
   return {
     pageStep,
     updatePageStep,
@@ -70,5 +76,6 @@ export const usePageStepStore = defineStore("pageStep", () => {
     moveToPreviousPage,
     scriptData,
     saveScriptData,
+    openai,
   };
 });
