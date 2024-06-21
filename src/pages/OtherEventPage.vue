@@ -4,15 +4,14 @@ import CustomInputComponent from "../components/CustomInputComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
-const pageStepStore = usePageStepStore();
+const { moveToNextPage, saveScriptData } = usePageStepStore();
 const otherEvent = ref("");
 
 const handleClickNextButton = () => {
-  if (otherEvent.value === "") {
-    return;
-  }
-  pageStepStore.saveScriptData(["기타", otherEvent.value]);
-  pageStepStore.handleClickNextButton();
+  if (otherEvent.value === "") return;
+
+  saveScriptData("eventDetail", otherEvent.value);
+  moveToNextPage();
 };
 </script>
 

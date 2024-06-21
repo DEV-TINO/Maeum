@@ -1,7 +1,7 @@
 <script setup>
 import { usePageStepStore } from "@/stores/store";
 
-const pageStepStore = usePageStepStore();
+const { moveToNextPage } = usePageStepStore();
 </script>
 
 <template>
@@ -17,7 +17,7 @@ const pageStepStore = usePageStepStore();
     </div>
     <button
       class="my-11 h-14 w-11/12 bg-white rounded-2xl text-button-color font-bold"
-      @click="pageStepStore.handleClickNextButton()"
+      @click="moveToNextPage()"
     >
       시작하기
     </button>

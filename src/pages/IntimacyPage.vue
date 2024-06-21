@@ -13,6 +13,7 @@ const INTIMACY_DATA = [
   "안친함",
 ];
 const selectedIndex = ref(-1);
+const { moveToNextPage, saveScriptData } = usePageStepStore();
 
 const handleClickCustomBox = (idx) => {
   selectedIndex.value = idx;
@@ -21,10 +22,9 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  pageStepStore.saveScriptData(INTIMACY_DATA[selectedIndex.value]);
-  pageStepStore.handleClickNextButton();
+  saveScriptData("intimacy", INTIMACY_DATA[selectedIndex.value]);
+  moveToNextPage();
 };
-const pageStepStore = usePageStepStore();
 </script>
 
 <template>

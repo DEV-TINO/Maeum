@@ -5,8 +5,6 @@ import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 import { useRouter } from "vue-router";
 
-const router = useRouter();
-const pageStepStore = usePageStepStore();
 const HAPPY_EVENT_DATA = [
   "결혼",
   "생일",
@@ -21,13 +19,15 @@ const HAPPY_EVENT_DATA = [
   "출산",
   "취업",
 ];
+const router = useRouter();
 const selectedIndex = ref(-1);
+const { moveToNextPage, saveScriptData } = usePageStepStore();
 
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  pageStepStore.saveScriptData(["경사", HAPPY_EVENT_DATA[selectedIndex.value]]);
-  pageStepStore.handleClickNextButton();
+  saveScriptData("eventDetail", HAPPY_EVENT_DATA[selectedIndex.value]);
+  moveToNextPage();
 };
 
 const handleClickCustomBox = (idx) => {

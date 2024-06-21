@@ -4,9 +4,9 @@ import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
-const pageStepStore = usePageStepStore();
 const SCRIPT_LEN_DATA = ["1분", "3분", "5분", "7분", "10분"];
 const selectedIndex = ref(-1);
+const { moveToNextPage, saveScriptData } = usePageStepStore();
 
 const handleClickCustomBox = (idx) => {
   selectedIndex.value = idx;
@@ -15,8 +15,8 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  pageStepStore.saveScriptData(SCRIPT_LEN_DATA[selectedIndex.value]);
-  pageStepStore.handleClickNextButton();
+  saveScriptData("letterCount", SCRIPT_LEN_DATA[selectedIndex.value]);
+  moveToNextPage();
 };
 </script>
 

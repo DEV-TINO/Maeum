@@ -34,7 +34,7 @@ export const usePageStepStore = defineStore("pageStep", () => {
     { immediate: true }
   );
 
-  const handleClickNextButton = () => {
+  const moveToNextPage = () => {
     const nextRouteName = Object.keys(URL_MAP).find(
       (key) => URL_MAP[key] === pageStep.value + 1
     );
@@ -42,24 +42,32 @@ export const usePageStepStore = defineStore("pageStep", () => {
     router.push({ name: nextRouteName });
   };
 
-  const handleClickBackButton = () => {
+  const moveToPreviousPage = () => {
     const previousRouteName = Object.keys(URL_MAP).find(
       (key) => URL_MAP[key] === pageStep.value - 1
     );
     router.push({ name: previousRouteName });
   };
 
-  const scriptData = ref([]);
+  const scriptData = ref({
+    userName: "",
+    opponentName: "",
+    eventType: "",
+    eventDetail: "",
+    letterCount: "",
+    intimacy: "",
+    speech: "",
+  });
 
-  const saveScriptData = (data) => {
-    scriptData.value[pageStep.value - 1] = data;
+  const saveScriptData = (key, data) => {
+    scriptData.value[key] = data;
   };
 
   return {
     pageStep,
     updatePageStep,
-    handleClickNextButton,
-    handleClickBackButton,
+    moveToNextPage,
+    moveToPreviousPage,
     scriptData,
     saveScriptData,
   };

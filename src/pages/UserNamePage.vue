@@ -4,15 +4,14 @@ import CustomInputComponent from "../components/CustomInputComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
-const pageStepStore = usePageStepStore();
+const { moveToNextPage, saveScriptData } = usePageStepStore();
 const userName = ref("");
 
 const handleClickNextButton = () => {
-  if (userName.value === "") {
-    return;
-  }
-  pageStepStore.saveScriptData(userName.value);
-  pageStepStore.handleClickNextButton();
+  if (userName.value === "") return;
+
+  saveScriptData("userName", userName.value);
+  moveToNextPage();
 };
 </script>
 

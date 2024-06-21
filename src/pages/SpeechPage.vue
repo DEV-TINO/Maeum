@@ -4,8 +4,7 @@ import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
 
-const pageStepStore = usePageStepStore();
-const ACCENT_DATA = [
+const SPEECH_DATA = [
   "다정한",
   "공손한",
   "친근한",
@@ -17,6 +16,7 @@ const ACCENT_DATA = [
   "격식적",
 ];
 const selectedIndex = ref(-1);
+const { moveToNextPage, saveScriptData } = usePageStepStore();
 
 const handleClickCustomBox = (idx) => {
   selectedIndex.value = idx;
@@ -25,8 +25,8 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  pageStepStore.saveScriptData(ACCENT_DATA[selectedIndex.value]);
-  pageStepStore.handleClickNextButton();
+  saveScriptData("speech", SPEECH_DATA[selectedIndex.value]);
+  moveToNextPage();
 };
 </script>
 
@@ -38,9 +38,9 @@ const handleClickNextButton = () => {
       >
       <div class="grid grid-cols-3 text-center gap-2 gap-y-3 text-lg">
         <CustomBoxComponent
-          v-for="(accent, index) in ACCENT_DATA"
+          v-for="(speech, index) in SPEECH_DATA"
           :key="index"
-          :text="accent"
+          :text="speech"
           @click="handleClickCustomBox(index)"
           :class="{
             'border-primary-color border-2 bg-select-box-color text-primary-color':
