@@ -1,21 +1,24 @@
 import { defineStore } from "pinia";
 import { ref, watch } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const URL_MAP = {
-  0: { name: "main" },
-  1: { name: "user" },
-  2: { name: "opponent" },
-  3: { name: "event" },
-  4: { name: "letterCount" },
-  5: { name: "intimacy" },
-  6: { name: "speech" },
-  7: { name: "loading" },
+  main: 0,
+  user: 1,
+  opponent: 2,
+  event: 3,
+  eventHappy: 3,
+  eventSad: 3,
+  eventOther: 3,
+  letterCount: 4,
+  intimacy: 5,
+  speech: 6,
+  loading: 7,
 };
 
 export const usePageStepStore = defineStore("pageStep", () => {
+  const route = useRoute();
   const router = useRouter();
-
   const pageStep = ref(0);
 
   const updatePageStep = (value) => {
@@ -23,13 +26,28 @@ export const usePageStepStore = defineStore("pageStep", () => {
     pageStep.value = value;
   };
 
+  watch(
+    () => route.name,
+    () => {
+      updatePageStep(URL_MAP[route.name]);
+    },
+    { immediate: true }
+  );
+
   const handleClickNextButton = () => {
-    updatePageStep(pageStep.value + 1);
+    const nextRouteName = Object.keys(URL_MAP).find(
+      (key) => URL_MAP[key] === pageStep.value + 1
+    );
+
+    router.push({ name: nextRouteName });
   };
 
-  watch(pageStep, (newpageStep) => {
-    router.push(URL_MAP[newpageStep]);
-  });
+  const handleClickBackButton = () => {
+    const previousRouteName = Object.keys(URL_MAP).find(
+      (key) => URL_MAP[key] === pageStep.value - 1
+    );
+    router.push({ name: previousRouteName });
+  };
 
   const scriptData = ref([]);
 
@@ -41,6 +59,7 @@ export const usePageStepStore = defineStore("pageStep", () => {
     pageStep,
     updatePageStep,
     handleClickNextButton,
+    handleClickBackButton,
     scriptData,
     saveScriptData,
   };
