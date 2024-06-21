@@ -1,16 +1,18 @@
 <script setup>
-import { useRouter } from "vue-router";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { usePageStepStore } from "@/stores/store";
+import { useRouter } from "vue-router";
+
+const { scriptData } = usePageStepStore();
+const result = history.state.resultData;
+const router = useRouter();
 
 const handleClickRestartButton = () => {
-  pageStepStore.pageStep = 1;
+  router.push({ name: "user" });
 };
-const pageStepStore = usePageStepStore();
-const result = history.state.resultData;
 
 const handleClickQuitButton = () => {
-  pageStepStore.pageStep = 0;
+  router.push({ name: "main" });
 };
 </script>
 <template>
@@ -19,9 +21,7 @@ const handleClickQuitButton = () => {
   >
     <div class="w-5/6 text-left mt-28">
       <h2 class="text-xl font-bold">
-        <span class="text-primary-color">{{
-          pageStepStore.scriptData[0]
-        }}</span>
+        <span class="text-primary-color">{{ scriptData.userName }}</span>
         님을 위한 <br />
         스크립트를 생성했어요!
       </h2>
@@ -51,12 +51,13 @@ const handleClickQuitButton = () => {
     </div>
     <div class="flex flex-row bg-white w-full px-5 gap-6">
       <NextButttonComponent
+        text="다시하기"
         class="bg-primary-color"
+        :handleClickNextButton="handleClickRestartButton"
+      />
+      <NextButttonComponent
         text="종료"
         :handleClickNextButton="handleClickQuitButton"
-      /><NextButttonComponent
-        text="다시하기"
-        :handleClickNextButton="handleClickRestartButton"
       />
     </div>
   </div>

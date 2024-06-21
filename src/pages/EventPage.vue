@@ -3,10 +3,12 @@ import { ref } from "vue";
 import CustomBoxComponent from "../components/CustomBoxComponent.vue";
 import NextButttonComponent from "../components/NextButttonComponent.vue";
 import { useRouter } from "vue-router";
+import { usePageStepStore } from "@/stores/store";
 
 const EVENT_TYPE_DATA = ["경사", "조사", "기타"];
 const router = useRouter();
 const selectedIndex = ref(-1);
+const { saveScriptData } = usePageStepStore();
 
 const handleClickCustomBox = (idx) => {
   selectedIndex.value = idx;
@@ -15,8 +17,10 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === 0) {
     router.push({ name: "eventHappy" });
+    saveScriptData("eventType", "경사");
   } else if (selectedIndex.value === 1) {
     router.push({ name: "eventSad" });
+    saveScriptData("eventType", "조사");
   } else if (selectedIndex.value === 2) {
     router.push({ name: "eventOther" });
   }

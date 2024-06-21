@@ -1,7 +1,8 @@
 <script setup>
 import { usePageStepStore } from "@/stores/store";
+import { storeToRefs } from "pinia";
 
-const pageStepStore = usePageStepStore();
+const { pageStep } = storeToRefs(usePageStepStore());
 const MAX_PAGE_STEP = 6;
 const progressBarStep = (step) => {
   return {
@@ -13,12 +14,12 @@ const progressBarStep = (step) => {
   <div class="w-full flex flex-row justify-between items-center px-6">
     <div class="w-72 h-2 bg-box-color rounded-full relative">
       <div
-        :style="progressBarStep(pageStepStore.pageStep)"
+        :style="progressBarStep(pageStep)"
         class="bg-primary-color rounded-full h-full"
       ></div>
     </div>
     <h1 class="text-primary-color font-semibold">
-      {{ pageStepStore.pageStep }}/{{ MAX_PAGE_STEP }}
+      {{ pageStep }}/{{ MAX_PAGE_STEP }}
     </h1>
   </div>
 </template>
