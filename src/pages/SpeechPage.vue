@@ -25,7 +25,7 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  saveScriptData("speech", SPEECH_DATA[selectedIndex.value]);
+  saveScriptData({ speech: SPEECH_DATA[selectedIndex.value] });
   moveToNextPage();
 };
 </script>

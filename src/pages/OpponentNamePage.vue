@@ -10,7 +10,7 @@ const opponentName = ref("");
 const handleClickNextButton = () => {
   if (opponentName.value === "") return;
 
-  saveScriptData("opponentName", opponentName.value);
+  saveScriptData({ opponentName: opponentName.value });
   moveToNextPage();
 };
 </script>

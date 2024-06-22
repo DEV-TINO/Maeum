@@ -60,8 +60,11 @@ export const usePageStepStore = defineStore("pageStep", () => {
     speech: "",
   });
 
-  const saveScriptData = (key, data) => {
-    scriptData.value[key] = data;
+  const saveScriptData = (data) => {
+    scriptData.value = {
+      ...scriptData.value,
+      ...data,
+    };
   };
 
   const openai = new OpenAI({

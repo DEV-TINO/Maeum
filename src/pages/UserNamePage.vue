@@ -10,7 +10,7 @@ const userName = ref("");
 const handleClickNextButton = () => {
   if (userName.value === "") return;
 
-  saveScriptData("userName", userName.value);
+  saveScriptData({ userName: userName.value });
   moveToNextPage();
 };
 </script>
