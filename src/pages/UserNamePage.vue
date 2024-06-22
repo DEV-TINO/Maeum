@@ -8,7 +8,7 @@ const { moveToNextPage, saveScriptData } = usePageStepStore();
 const userName = ref("");
 
 const handleClickNextButton = () => {
-  if (userName.value === "") return;
+  if (!userName.value) return;
 
   saveScriptData({ userName: userName.value });
   moveToNextPage();

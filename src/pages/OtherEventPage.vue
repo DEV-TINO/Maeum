@@ -8,7 +8,7 @@ const { moveToNextPage, saveScriptData } = usePageStepStore();
 const otherEvent = ref("");
 
 const handleClickNextButton = () => {
-  if (otherEvent.value === "") return;
+  if (!otherEvent.value) return;
 
   const result = { eventType: "기타", eventDetail: otherEvent.value };
   saveScriptData(result);
