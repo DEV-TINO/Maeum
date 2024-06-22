@@ -1,3 +1,9 @@
+<script setup>
+import { usePageStepStore } from "@/stores/store";
+
+const { moveToNextPage } = usePageStepStore();
+</script>
+
 <template>
   <div
     class="h-full flex flex-col justify-center items-center bg-main-background bg-no-repeat bg-bottom"
@@ -7,25 +13,15 @@
       <p class="text-4xl text-primary-color font-extrabold tracking-wide">
         MAEUM
       </p>
-      <img src="../../public/image/main-logo.png" class="w-5/6" />
+      <img src="/images/main-logo.png" class="w-5/6" />
     </div>
     <button
       class="my-11 h-14 w-11/12 bg-white rounded-2xl text-button-color font-bold"
-      @click="handleClickStartButton"
+      @click="moveToNextPage()"
     >
       시작하기
     </button>
   </div>
 </template>
-
-<script>
-export default {
-  methods: {
-    handleClickStartButton() {
-      this.$router.push("/step/1");
-    },
-  },
-};
-</script>
 
 <style></style>
