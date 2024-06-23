@@ -15,7 +15,7 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  saveScriptData("letterCount", SCRIPT_LEN_DATA[selectedIndex.value]);
+  saveScriptData({ letterCount: SCRIPT_LEN_DATA[selectedIndex.value] });
   moveToNextPage();
 };
 </script>

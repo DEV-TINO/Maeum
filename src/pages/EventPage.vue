@@ -17,10 +17,10 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === 0) {
     router.push({ name: "eventHappy" });
-    saveScriptData("eventType", "경사");
+    saveScriptData({ eventType: "경사" });
   } else if (selectedIndex.value === 1) {
     router.push({ name: "eventSad" });
-    saveScriptData("eventType", "조사");
+    saveScriptData({ eventType: "조사" });
   } else if (selectedIndex.value === 2) {
     router.push({ name: "eventOther" });
   }

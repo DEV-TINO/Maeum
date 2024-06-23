@@ -22,7 +22,7 @@ const handleClickCustomBox = (idx) => {
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  saveScriptData("intimacy", INTIMACY_DATA[selectedIndex.value]);
+  saveScriptData({ intimacy: INTIMACY_DATA[selectedIndex.value] });
   moveToNextPage();
 };
 </script>

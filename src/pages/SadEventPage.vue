@@ -26,7 +26,7 @@ const { moveToNextPage, saveScriptData } = usePageStepStore();
 const handleClickNextButton = () => {
   if (selectedIndex.value === -1) return;
 
-  saveScriptData("eventType", SAD_EVENT_DATA[selectedIndex.value]);
+  saveScriptData({ eventType: SAD_EVENT_DATA[selectedIndex.value] });
   moveToNextPage();
 };
 
